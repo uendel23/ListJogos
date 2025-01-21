@@ -21,7 +21,6 @@ public class GameController {
     public List<GameMinDto> findAll() {
         List<GameMinDto> result = service.findAll();
         return result;
-
     }
 
 
