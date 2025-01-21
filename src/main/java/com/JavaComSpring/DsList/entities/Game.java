@@ -2,7 +2,6 @@ package com.JavaComSpring.DsList.entities;
 
 import jakarta.persistence.*;
 
-import javax.lang.model.element.Name;
 import java.util.Objects;
 
 @Entity
@@ -13,28 +12,49 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-
+    private String title;
     @Column(name = "game_year")
     private Integer year;
+    private Double score;
     private String genre;
-    private String plataform;
+    private String platforms;
     private String imgUrl;
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     public Game(){
 
     }
 
-    public Game(Long id, String name, Integer year, String genre, String plataform, String imgUrl, String shortDescription, String longDescription) {
+    public Game(Long id, String name, String title, Integer year, Double score, String genre, String plataform, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
         this.name = name;
+        this.title = title;
         this.year = year;
+        this.score = score;
         this.genre = genre;
-        this.plataform = plataform;
+        this.platforms = plataform;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     public Long getId() {
@@ -69,12 +89,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlataform() {
-        return plataform;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlataform(String plataform) {
-        this.plataform = plataform;
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
     }
 
     public String getImgUrl() {
